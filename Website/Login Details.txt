@@ -1,0 +1,10 @@
+// Login as Customer:
+-------------------------
+username: demoAcc
+password: 123
+#########################
+// Login as Manager:
+-------------------------
+username: admin
+password: 12345
+#########################

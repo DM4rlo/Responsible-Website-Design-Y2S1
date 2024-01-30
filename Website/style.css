@@ -1,0 +1,1232 @@
+/*
+Tell find particular code use: Ctrl + F ---> ''
+
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;500&display=swap');
+
+/* Clears default settings for html */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #d3242b;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* ############################### Navbar - Start ####################################### */
+
+li, a{
+    font-family: "Monsterrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10px;
+}
+
+.logo{
+    cursor: pointer;
+    height: 100px;
+    width: 400px;
+    margin-left: 150px;
+    margin-right: auto;
+}
+
+.m-logo{
+    cursor: pointer;
+    height: 150px;
+    width: 150px;
+    margin-left: 100px;
+    margin-right: auto;
+}
+
+.nav__links{
+    list-style: none;
+    padding-right: 150px;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+/* Add a line Animation feature to nav links */
+.nav__links li a{
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav__links li a:before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav__links li a:hover::before{
+    transform: scaleX(1);
+}
+/* End of line Animation */
+
+/* Navbar response to smaller screens */
+@media(max-width: 1198px) {
+    .nav__links{
+        display: none;
+    }
+    /*
+    .logo{
+        display: none;
+    }*/
+}
+
+.hamburger{
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    margin-right: 100px;
+    user-select: none;
+
+    appearance: none;
+    border:none;
+    outline: none;
+    background: none;
+    cursor:pointer;
+}
+
+.hamburger.is-active{
+    z-index: 99;
+}
+
+.hamburger span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background-color: white;
+
+    border-radius: 6px;
+    z-index: 1;
+
+    /* starts from top left */
+    transform-origin: 0 0;
+
+    transition: 0.4s;
+}
+
+
+/* Hovering over icon changes 2nd line color */
+.hamburger:hover span:nth-child(2) {
+    transform: translateX(10px);
+    background-color: black;
+}
+
+/* Hamburger Cross Animation when Activated */
+.hamburger.is-active span:nth-child(1){
+    transform: translate(0px, -2px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(3){
+    transform: translate(-3px, 3px) rotate(-45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(15px)
+}
+
+.hamburger.is-active:hover span {
+    background-color: black;
+}
+
+/* End of Cross Animation*/
+
+/* Anything above of this size wont display */
+@media(min-width: 1198px) {
+    .hamburger{
+        display: none;
+    }
+
+}
+
+@media(max-width: 731px) {
+    .logo{
+        display: none;
+    }
+}
+
+/* For mobile logo */
+@media(min-width: 732px){
+    .m-logo{
+        display: none;
+    }
+}
+/* ------ Mobilie Navbar ------ */
+.mobile-nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 100%; /* Moves items to right from screen*/
+    width: 100%;
+    min-height: 100vh;
+    display: block;
+    z-index: 98;
+    background-color: #d3242b;
+    padding-top: 120px;
+    transition: 0.4s;
+}
+
+.mobile-nav body{
+    overflow: hidden
+}
+.mobile-nav.is-active{
+    left: 0;
+}
+
+.mobile-nav a{
+    display: block;
+    margin: 0 auto 16px;
+    width: 100%;
+    border-radius: 8px;
+    max-width: 200px;
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    color: #d3242b;
+    background-color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.mobile-nav a:hover{
+    background-color: rgb(196, 189, 189);
+    color: #d3242b;
+    transition: 0.3s;
+}
+
+/* ############################### Navbar - End ####################################### */
+
+
+
+
+
+
+
+/* ############################### Contentspace (Homepage) - Start ################################## */
+
+.topspace{
+    height: 400px auto;
+    margin: 0 auto;
+    margin-left: 200px;
+    margin-right: 50px;
+    display: flex;
+
+}
+
+.topS-left{
+    width: 30%;
+    margin-right: 50px;
+}
+
+.topS-left h1{
+    font-family: "Mukta";
+    color: white;
+    font-size: xx-large;
+    margin-bottom: 30px;
+}
+
+.topS-left p{
+    color: white;
+    font-family: "Mukta";
+    font-size: 200;
+}
+
+.topS-right{
+    width: 60%;
+    height: 100% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-img{
+    width: 50%;
+    min-width: 467px;
+    min-height: 380px;
+    border-radius: 8px;
+    margin-top: 45px;
+    margin-bottom: 15px;
+}
+.intro-img2{
+    width: 50%;
+    min-width: 467px;
+    min-height: 380px;
+    border-radius: 8px;
+    margin-top: -70px;
+    margin-left: -800px;
+}
+
+/* Adjust topspace content */
+@media(max-width: 1453px){
+    .topspace{
+        flex-direction: column;
+        width: auto;
+        margin-bottom: 50px;
+        height: 640px;
+    }
+
+    .topS-left{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .topS-right{
+        width: 100%;
+        height: auto;
+    }
+
+    .intro-img{
+        height: 150px;
+        width: 580px;
+        margin-bottom: -50px;
+    }
+
+    .intro-img2{
+        height: 150px;
+        width: 580px;
+        margin-top: -20px;
+        margin-left: -1000px;
+    }
+}
+
+@media(max-width: 1172px){
+
+    .topspace{
+        margin-left: 100px;
+        height: auto;
+    }
+
+    .topS-right{
+        width: auto;
+        height: 500px;
+    }
+
+    .intro-img{
+        display: none;
+    }
+
+    .intro-img2{
+        margin-left: 0px;
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;        
+    }
+}
+
+@media(max-width: 780px){
+    
+    .topspace{
+        margin-left: 35px;
+    }
+
+    .topS-right{
+        margin-top: 45px;
+        margin-bottom: 45px;
+        height: 250px;
+    }
+
+}
+
+@media(max-width: 504px){
+    
+    .topspace{
+        height: 750px;
+    }
+    
+    .topS-right{
+        margin-top: 120px;
+        height: 100px;
+    }
+}
+
+/* End of topspace content */
+
+/* Start of Workspace content */
+.workspace{
+    height: auto;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workspace h1{
+    background-color: #eee;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: xx-large;
+    width: 50%;
+    letter-spacing: 3px;
+    height: auto;
+    
+}
+
+.setrd{
+    background-color: #eee;
+    color: #d3242b;
+}
+
+/* workspace h1 responsive changes */
+@media(max-width: 1173px){
+    .workspace h1{
+        width: 80%;
+    }
+}
+
+/* Homepage Tiles - Start */
+.tile-container{
+    background-color: #eee;
+    display: flex;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tile-card{
+    width: 80%;
+    max-width: 1500px;
+    max-height: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px rgba(0,0,0, 0.5);
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+
+}
+
+.tile-img{
+    min-width: 400px;
+    height: 300px;
+    transform: translateX(-120px);
+    position: relative;
+    background-color: transparent;
+}
+
+.tile-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgba(0,0,0, 0.5);
+}
+
+.tile-info{
+    background-color: #fff;
+}
+
+.tile-info span{
+    display: block;
+    background-color: #fff;
+    color: rgba(0,0,0, .5);
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.tile-title{
+    font-size: 50px;
+    font-family: "Fuzzy Bubbles", sans-serif;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #d3242b;
+}
+
+.tile-info p{
+    margin-bottom: 40px;
+    font-size: 20px;
+    background-color: #fff;
+    font-family: "Monsterrat", sans-serif;
+}
+
+.tile-cta{
+    display: inline-block;
+    padding: 24px 48px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #d3242b;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.tile-cta:hover{
+    background-color: #c01117;
+}
+
+/* Responsive Tile Design*/
+@media(max-width: 1158px){
+    
+    .workspace{
+        padding-bottom: 150px;
+    }
+
+    .tile-card{
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .tile-info{
+        margin-left: 20px;
+    }
+
+    .tile-img{
+        transform: translateY(-20px);
+        margin-bottom: 0px;
+    }
+
+    .tile-info p{
+        margin-bottom: 20px;
+    }
+    .tile-cta{
+        margin-bottom: 20px;
+    }
+
+    .tile-container{
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+}
+
+@media(max-width: 584px){
+    .tile-img{
+        padding-top: 30px;
+    }
+
+    .tile-container{
+        height: auto;
+        padding-bottom: 40px;
+    }
+}
+
+@media(max-width: 584px){
+    .tile-img{
+        transform: translateY(-10px);
+        min-width: auto;
+    }
+}
+
+/* ############################### Contentspace (Homepage) - End ################################## */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################### Contentspace (Meals) - Start ################################## */
+.pagetop-meals{
+    height: 300px;
+    background-image: url(images/2_Meals/meals_top.jpg);
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-bg{
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.cards{
+    margin: 0 auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    /* places gap between cards */
+    gap: 20px; 
+    font-family: sans-serif;
+}
+
+.card{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-img{
+    width: 100%;
+    display: block;
+}
+
+.card-content{
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding: 15px;
+    background-color: #fafafa;
+}
+
+.card-content h3{
+    background-color: #fff;
+    font-family: "Monsterrat", sans-serif;
+}
+
+.card-content p{
+    margin-top: 0;
+    background-color: #fff;
+}
+
+.card-info{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #eee;
+    font-size: 0.8em;
+    border-bottom: 2px solid #ccc;
+    color: black;
+}
+
+.card-info div{
+    background-color: #eee;
+}
+
+/* ############################### Contentspace (Meals) - End ################################## */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################### Contentspace (Drinks) - Start ################################## */
+.pagetop-drinks{
+    height: 300px;
+    background-image: url(images/3_Drinks/drinks_top.jpg);
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/* ############################### Contentspace (Drinks) - End ################################## */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################### Contentspace (Contact Us) - Start ################################## */
+
+/* Top Title - Start */
+.pagetop{
+    height: 300px;
+    background-image: url(images/7_contact_us/contact_us_top.png);
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagetitle{
+    background-color: transparent;
+    font-family: "Fuzzy Bubbles", sans-serif;
+    font-size: 100px;
+    color: black;
+}
+
+@media(max-width: 606px){
+    .pagetitle{
+        font-size: 60px;
+        
+    }
+}
+/* Top Title - End */
+
+/* Workspace - Start */
+.sub-box{
+    height: 60px;
+    background-color: #eee;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.sub-bg ul li{
+    padding-left: 350px;
+    padding-right: 350px;
+    background-color: #eee;
+    color: black;
+}
+
+.sub-title{
+    background-color: #eee;
+    font-family: "Monsterrat", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+@media(max-width: 516px){
+    .sub-title{
+        font-size: 20px;
+    }
+}
+
+.sub-box1{
+    height: 70px;
+    padding-top: 25px;
+    background-color: #eee;
+    display: flex;
+    align-items: flex-start;
+}
+
+.sub-title1{
+    background-color: #eee;
+    padding-left: 350px;
+    font-family: "Monsterrat", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#para_contact{
+    background-color: #eee;
+    padding-left: 350px;
+    padding-right: 350px;
+    padding-bottom: 20px;
+    font-family: "Monsterrat", sans-serif;
+}
+
+.sub-bg a{
+    color: rgb(82, 120, 204);
+    background-color: #eee;
+    font-weight: bold;
+}
+
+.sub-title2{
+    padding-bottom: 20px;
+    font-family: "Monsterrat", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #eee;
+    padding-left: 350px;
+}
+
+@media(max-width: 938px){
+    .sub-title1{padding-left: 60px;}
+
+    .sub-title2{
+        padding-left: 60px;
+        padding-right: 0px
+    }
+
+    #para_contact{
+        padding-left: 60px;
+        padding-right: 60px
+    }
+
+    .sub-bg ul li{
+        padding-left: 60px;
+        padding-right: 0px;
+    }
+}
+
+/* ############################### Contentspace (Contact Us) - End ################################## */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################### Contentspace (Signup) - Start ################################## */
+.signup-bg{
+    height: auto;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-tile{
+    width: 50%;
+    border: solid gray 1px;
+    background-color: #fff;
+}
+
+.signup-tile h2{
+    font-family: "Fuzzy Bubbles", sans-serif;
+    background-color: #fff;
+    color: #d3242b;
+    padding: 20px 25px;
+    border-color: black;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-style: solid;
+    border-width: 80%;
+
+}
+
+@media(max-width: 588px){
+    .signup-tile{
+        width: 80%;
+    }
+}
+
+/* ############################### Contentspace (Signup) - Start ################################## */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################### Contentspace (fgtpass) - Start ################################## */
+.fgt-bg{
+    height: 400px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fgt-tile{
+    width: 40%;
+    height: 90%;
+    border: solid gray 1px;
+    background-color: #fff;
+}
+
+.fgt-tile h2{
+    font-family: "Fuzzy Bubbles", sans-serif;
+    background-color: #fff;
+    color: #d3242b;
+    padding: 20px 25px;
+    border-color: black;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-style: solid;
+    border-width: 80%;
+
+}
+
+.fgt-tile p{
+    background-color: #fff;
+    font-family: "Monsterrat", sans-serif;
+    font-size: 15px;
+    padding: 10px 10px;
+}
+
+#fgtbtn{
+    border: 0px;
+    padding: 10px 30px;
+    margin-left: 80px;
+    font-size: 20px;
+    color: #fff;
+}
+
+#fgtbtn:hover{
+    background-color: #c01117;;
+}
+
+@media(max-width: 1494px){
+    .fgt-tile{
+        width: 80%
+    }
+}
+
+/* ############################### Contentspace (fgtpass) - End ################################## */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################### Contentspace (Login) - Start ################################## */
+.login-bg{
+    height: 600px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-tile{
+    width: 40%;
+    height: 65%;
+    border: solid gray 1px;
+    background-color: #fff;
+}
+
+.login-tile h2{
+    font-family: "Fuzzy Bubbles", sans-serif;
+    background-color: #fff;
+    color: #d3242b;
+    padding: 20px 25px;
+    border-color: black;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-style: solid;
+    border-width: 80%;
+
+}
+
+#fgt-pw, #fgt-pw a{
+    background-color: #fff;
+    color: rgb(82, 120, 204);
+}
+
+#login-text, #login-text label, #user, #pass{
+    background-color: #fff;
+    font-family: "Monsterrat", sans-serif;
+    font-size: 20px;
+}
+
+#login-text label, #login-text input{
+    margin: 4px 80px;
+}
+
+#user, #pass{
+    width: 80%;
+}
+
+#login-text{
+    padding-top: 15px;
+}
+
+#reg-btn{
+    padding: 5px;
+    font-size: 20px;
+    padding: 10px 30px;
+}
+
+#subtn{
+    border: 0px;
+    padding: 10px 30px;
+    margin-left: 20%;
+    font-size: 20px;
+    color: #fff;
+}
+
+#subtn:hover, #reg-btn:hover{
+    background-color: #c01117;
+}
+
+#fgt-pw{
+    padding-top: 50px;
+    padding-left: 80px;
+}
+
+@media(max-width: 1432px){
+    .login-tile{
+        width: 80%;
+        height: 80%;
+    }
+}
+
+@media(max-width: 862px){
+    .login-tile{
+        width: 100%;
+        height: 100%; 
+    }
+
+    #login-text label, #login-text input{
+        margin-left: 20px;
+    }
+    
+    #fgt-pw{
+        padding-left: 20px;
+    }
+
+    .login-bg{
+        height: 400px;
+    }
+}
+
+#sudbtn{
+    border: 0px;
+    padding: 10px 30px;
+    margin-left: 8%;
+    font-size: 20px;
+    color: #fff;
+}
+
+#sudbtn:hover{
+    background-color: #c01117;
+}
+
+/* ############################### Contentspace (Login) - End ################################## */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ############################### Contentspace (Welcome pages - Customer, Manager & Employee) - Start ################################## */
+.welcome-bg{
+    background-color: #eee;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-tile{
+    width: 80%;
+    width: 60%;
+    border: solid gray 1px;
+    background-color: #fff;
+}
+
+.welcome-tile h2{
+    font-family: "Fuzzy Bubbles", sans-serif;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #d3242b;
+    background-color: #fff;
+    border-color: black;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-style: solid;
+}
+
+.welcome-tile p{
+    font-family: "Monsterrat", sans-serif;
+    background-color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+@media(max-width:518px){
+    .welcome-bg{
+        height: auto;
+    }
+}
+/* ############################### Contentspace (Welcome pages - Customer, Manager & Employee) - End ################################## */
+
+
+
+
+
+
+
+
+
+
+
+/* ############################### Events Forms (Friday & Saturday) - Start ################################### */
+#fri-event, #sat-form{
+    background-color: #fff;
+}
+
+#event-qty{
+    background-color: #eee;
+    font-size: 25px;
+    width: 100px;
+}
+
+/* ############################### Events Forms (Friday & Saturday) - End ################################### */
+
+
+.employ-bg{
+    min-width: 1000px;
+    background-color: #eee;
+    height: auto 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.employ-tile{
+    width: auto 0;
+    height: auto 0;
+    border: solid gray 1px;
+    background-color: #fff;
+}
+
+.employ-tile h2{
+    font-family: "Fuzzy Bubbles", sans-serif;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #d3242b;
+    background-color: #fff;
+    border-color: black;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-style: solid;
+}
+
+
+
+.buttons-bg{
+    min-width: 1000px;
+    background-color: #eee;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile-cva{
+    display: inline-block;
+    padding: 24px 48px;
+    margin-left: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #d3242b;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.tile-cva:hover{
+    background-color: #c01117;
+}
+
+.role-fx{
+    margin-left: 77px;
+}
+
+/* ############################### Footer - Start ################################### */
+
+/* Line Animation feature for Footer */
+.lineAnime li a{
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.lineAnime li a:before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #eee;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.lineAnime li a:hover::before{
+    transform: scaleX(1);
+}
+
+/* End of line Animation */
+
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-footer h1{
+    font-family: 'Fuzzy Bubbles', cursive;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.container-footer ul{
+    margin: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container-footer li{
+    padding: 0 15px;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.container-footer a{
+    color: white;
+}
+
+.container-footer i{
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.container-footer p{
+    color: white;
+    margin-bottom: 50px;
+}
+
+/* ############################### Footer - End ################################### */
